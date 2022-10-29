@@ -48,6 +48,13 @@ class ViewController: UIViewController {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
         
+        // for project 15
+        UIView.animate(withDuration: 0.2) {
+            self.button1.transform = .identity
+            self.button2.transform = .identity
+            self.button3.transform = .identity
+        }
+        //----
         
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
@@ -58,6 +65,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonTapped(_ sender: UIButton) {
+        // for challenge project 15:
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 20) {
+            sender.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }
+        // ----
+        
         questions += 1
         
         var title: String
